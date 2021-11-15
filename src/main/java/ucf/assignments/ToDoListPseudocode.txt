@@ -1,0 +1,71 @@
+class ItemList
+{
+     getList()
+     {
+         ->returns the list
+     }
+
+     getItem()
+     {
+        ->takes the item's desc as the parameter
+        ->search through the list among the items and if the description matches,
+          it returns the matched item
+
+     }
+
+     validateDesc()
+     {
+        ->validates the description by checking if:
+            .description string is less than or equal to 256 char
+            .description null
+        ->if the requirment matches returns true, otherwise returns false
+     }
+
+     addItem()
+     {
+        ->check if the description is valid or not by calling the
+          validateDesc method
+        ->add the item to the list by calling the item methods
+          from ItemList class
+     }
+
+     updateDesc()
+     {
+       ->finds the object by caling getItem method
+       ->if match is found set the description with the new description
+     }
+
+     updateDate()
+     {
+        ->finds the object by caling getItem method
+        ->if match is found set the date with the new date
+     }
+
+     updateStatus()
+     {
+       ->finds the object by caling getItem method
+       ->if match is found set the status with the new status
+     }
+
+     removeItem()
+     {
+       ->find the item by calling the getItem method
+       ->if match is found remove the item from the list
+     }
+
+     clearItems()
+     {
+       -> clear the list
+       ->write blank in the external storage
+     }
+
+     saveList()
+     {
+        ->create a file and filwriter with the name of list.txt
+         by getting the absolute path of the file
+        ->get all the attributes of each items within the list
+        ->write the attributes of the items in the file
+
+     }
+
+}

@@ -1,0 +1,136 @@
+class AppViewController
+{
+    clearView()
+    {
+       ->call the getItem nethom from itemList
+       ->get the item from the listview called itemList
+       ->clear the view
+    }
+
+    refresh()
+    {
+      ->clear the desc area of the GUI
+      ->set the dudate area as local date
+      ->make complete and incomplete checkbok uncheck by making the boolean as false
+    }
+
+    DisplayList()()
+    {
+      ->clearview in the list view
+      ->grab each items from the list and add each attributes to the
+        listarea
+    }
+
+    ClearList()
+    {
+      ->when clearList button clicked, the list vire will be cleared
+        by calling the clearView method
+    }
+    DisplayAll()
+    {
+      ->when DisplayAll button all clicked it, will print all
+        the items by calling the displayList method
+    }
+
+    displayComplete()
+    {
+      ->when the button is clicked, first clear the listView
+      ->get all the items of the list and match if the isComplete is
+        true
+      ->if true, then get all the attributes of the item and add
+         it to the list view
+    }
+
+     displayIncomplete()
+     {
+          ->when the button is clicked, first clear the listView
+          ->get all the items of the list and match if the isComplete is
+            false
+          ->if true, then get all the attributes of the item and add
+            it to the list view
+
+     }
+
+    AddItem()
+    {
+         ->when the AddItem is clicked, validate if the user put any derscription and dudate
+         ->if the desc and due date not null, then call the addItem method from the itemList
+           class where the parameters will be the desc, duedate and status that the user chose
+         ->refresh the user input areas bny calling the refresh method
+    }
+
+    getCurDesc()
+    {
+        ->gets the string that the user selected by using getSelectionModel()
+        ->split the string by space where the first part of the string is the selected
+          item's desc
+        ->return the desc
+    }
+
+    EditDesc()
+    {
+       ->get the current desc by calling the getCurDesc() method
+       ->update the item's desc by calling the updateDesc method from the ItemList class
+       ->clear the user input areas by calling the refresh method
+       ->Display the list by calling the DisplayList method
+    }
+
+    EditDate()
+    {
+       ->get the current desc by calling the getCurDesc() method
+       ->update the item's desc by calling the updateDate method from the ItemList class
+       ->clear the user input areas by calling the refresh method
+       ->Display the list by calling the DisplayList method
+    }
+
+    EditStatus()
+    {
+       ->get the current desc by calling the getCurDesc() method
+       ->update the item's desc by calling the updateStatus method from the ItemList class
+       ->clear the user input areas by calling the refresh method
+       ->Display the list by calling the DisplayList method
+    }
+
+    DeletItem()
+    {
+      ->get the selected itrem's desc by calling the getCurDesc method
+      ->call removeItem and saveList method from ItemList class
+        to remove the item and save the new version of the list
+    }
+
+    EmptyList()
+    {
+     ->create the path of the file hwere the list is saved
+     ->call clearItems method from ItemList class
+     ->clear the listview by calling the clearView method
+    }
+
+    LoadItemButton()
+    {
+       ->create the path of the file hwere the list is saved
+       ->clear the listView by calling the clearView method
+       ->create a file with the path to the file
+       ->create a FileReader of the file and a BuffreReader of the
+         FileRedaer to create a buffer for each reading
+       ->while reading until the end of the file, split each line by (----)
+         where the first part is the desc, second part is the date and
+         the third part is the status
+       ->create a string for each items including all the attributes
+       ->add the string to the list view
+
+    }
+
+    saveItemButton()
+    {
+      ->call the saveList method from ItemList class
+       to save the list to the external storage in a file
+    }
+
+    RefreshList()
+    {
+      ->clear the user input area by calling the refresh method
+    }
+
+
+
+}

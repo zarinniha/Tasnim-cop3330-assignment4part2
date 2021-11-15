@@ -1,0 +1,72 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class App
+{
+   +main(String)
+   +start(Stage)
+}
+
+class AppViewController
+{
+    -path:String
+    -itemFile:String
+    -DueDate: DatePicker
+    -ItemComplete: CheckBox
+    -ItemIncomplete: CheckBox
+    -ItemDesc: TextArea
+    -itemList: ListView
+    -list: ToDoList
+    -item: ItemList
+
+    +clearView()
+    +refresh()
+    +DisplayList()
+    +ClearList()
+    +DisplayAll()
+    +displayComplete()
+    +displayIncomplete()
+    +AddItem()
+    +getCurDesc()
+    +EditDesc()
+    +EditDate()
+    +EditStatus()
+    +DeletItem()
+    +EmptyList()
+    +LoadItemButton()
+    +saveItemButton()
+    +RefreshList()
+}
+
+class ItemList
+{
+ -description: String
+ -date: LocalDate
+ -isComplete: boolean
+
+ +setDate(LocalDate)
+ +setDescription(String)
+ +setComplete(boolean)
+ +getDate():LocalDate
+ +getDescription():String
+ +getComplete():boolean
+ }
+
+
+ class ToDoList
+ {
+   -list:  ArrayList<ItemList>
+
+   +getList()
+   +getItem()
+   +validateDesc():boolean
+   +addItem()
+   +updateDesc()
+   +updateDate()
+   +updateStatus()
+   +removeItem()
+   +clearItems()
+   +saveList()
+ }
+
+@enduml
